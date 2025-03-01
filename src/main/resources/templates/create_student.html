@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>Create Student</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
 </head>
 <body>
-<h1>Create Student</h1>
-<form th:action="@{/students}" th:object="${student}" method="post">
-    <label>Name: <input type="text" th:field="*{name}"/></label>
-    <label>Email: <input type="text" th:field="*{email}"/></label>
-    <label>Graduation Year: <input type="text" th:field="*{graduationYear}"/></label>
-    <button type="submit">Save</button>
-</form>
+<div class="container">
+    <h1>Create Student</h1>
+    <a href="/students" class="btn">Back to Students</a>
+
+    <form th:action="@{/students}" th:object="${student}" method="post">
+        <input type="text" class="form-control" th:field="*{name}" placeholder="Name" required>
+        <input type="email" class="form-control" th:field="*{email}" placeholder="Email" required>
+        <input type="text" class="form-control" th:field="*{graduationYear}" placeholder="Graduation Year" required>
+        <button type="submit" class="btn">Save</button>
+    </form>
+</div>
 </body>
 </html>

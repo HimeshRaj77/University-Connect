@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>University Connect</title>
+    <link th:href="@{static/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/students">Students</a>
+    <a href="/alumni">Alumni</a>
+    <a href="/login" class="btn">Login</a>
+</div>
+
+<div class="hero">
+    <div class="container">
+        <h1>Welcome to University Connect</h1>
+        <p class="lead">Bridging Students and Alumni for Success</p>
+        <div class="cta-buttons">
+            <a href="/register" class="btn btn-large">Get Started</a>
+            <a href="/login" class="btn btn-large btn-outline">Learn More</a>
+        </div>
+    </div>
+</div>
+
+<div class="container features">
+    <div class="feature-card">
+        <h3>🚀 Career Guidance</h3>
+        <p>Connect with experienced alumni for career advice and mentorship.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>🎓 Student Network</h3>
+        <p>Build relationships with current students across all departments.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>💼 Job Opportunities</h3>
+        <p>Access exclusive job postings and internship opportunities.</p>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>© EEdunexus.</p>
+    </div>
+</footer>
+</body>
+</html>

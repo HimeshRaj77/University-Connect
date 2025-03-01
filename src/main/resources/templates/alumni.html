@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>Alumni</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
 </head>
 <body>
-<h1>Alumni</h1>
-<table>
-    <tr th:each="alumni : ${alumni}">
-        <td th:text="${alumni.name}"></td>
-        <td th:text="${alumni.email}"></td>
-        <td th:text="${alumni.graduationYear}"></td>
-    </tr>
-</table>
-<a href="/alumni/new">Add Student</a>
+<div class="navbar">
+    <a href="/students">Students</a>
+    <a href="/alumni">Alumni</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="container">
+    <h1>Alumni</h1>
+    <a href="/alumni/new" class="btn">Add New Alumni</a>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Graduation Year</th>
+            <th>Current Job</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="alumni : ${alumni}">
+            <td th:text="${alumni.name}"></td>
+            <td th:text="${alumni.email}"></td>
+            <td th:text="${alumni.graduationYear}"></td>
+            <td th:text="${alumni.currentJob}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

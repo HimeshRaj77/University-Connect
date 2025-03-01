@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>Students</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
 </head>
 <body>
-<h1>Students</h1>
-<table>
-    <tr th:each="student : ${students}">
-        <td th:text="${student.name}"></td>
-        <td th:text="${student.email}"></td>
-        <td th:text="${student.graduationYear}"></td>
-    </tr>
-</table>
-<form th:action="@{/students/search}" method="get">
-    <input type="text" name="query" placeholder="Search..."/>
-    <button type="submit">Search</button>
-</form>
-<a href="/students/new">Add Student</a>
+<div class="navbar">
+    <a href="/students">Students</a>
+    <a href="/alumni">Alumni</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="container">
+    <h1>Students</h1>
+    <a href="/students/new" class="btn">Add New Student</a>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Graduation Year</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.email}"></td>
+            <td th:text="${student.graduationYear}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
