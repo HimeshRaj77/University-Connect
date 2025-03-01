@@ -36,7 +36,7 @@ A Spring Boot web application connecting university students and alumni through 
 ### Quick Start
 ```bash
 # 1. Clone repository
-git clone https://github.com/yourusername/university connect.git
+git clone https://github.com/yourusername/Uniersity-Connect.git
 
 # 2. Navigate to project directory
 cd university-connect
