@@ -21,6 +21,11 @@ public class SecurityConfig {
                         .requestMatchers("/students/**").hasRole(Role.STUDENT) // STUDENT-only endpoints
                         .requestMatchers("/alumni/**").hasRole(Role.ALUMNI) // ALUMNI-only endpoints
                         .requestMatchers("/admin/**").hasRole(Role.ADMIN) // ADMIN-only endpoints
+                        .requestMatchers(
+                                "/css/**",  // Allow CSS files
+                                "/js/**",   // Allow JS files
+                                "/images/**" // Allow images
+                        ).permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
